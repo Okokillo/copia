@@ -1,0 +1,184 @@
+/* Importar fontes. (ROBOTO) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap');
+
+/* Deixa o site proporcional diante a tela (borda na borda) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Dá cor e fonte para os textos e organiza tamanho e largura de tudo. */
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    color: #CAB9B9;
+    position: fixed;
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+}
+
+/* Usa de fundo a imagem "filme.png", que é substituída pela imagem do filme pesquisado.*/
+#moviePoster {
+    width: 50%;
+    height: 100%;
+    /* background: url(filme.png) no-repeat center; */
+    /* background-size: cover; */
+    position: relative;
+
+    background-image: url(filme.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* é adicionado o retângulo e organizado para ficar da forma que está (rotacionado e com as informações
+'dentro' */
+.omdbrating {
+    position: absolute;
+    width: 315.47px; 
+    height: 70.49px;
+    
+    left: -90px;
+    bottom: 0;
+
+    padding-left: 90px;
+    padding-top: 10px;
+
+    background: #217C8F;
+    transform: rotate(47.42deg);
+
+    padding-top: 15px;
+}
+
+/* Muda a cor do ícone de estrela. */
+#icone {
+    color: #F6C516;
+}
+
+/* Muda a cor do nome "Score" (que pode ser substituído por uma pontuação do filme) */
+#imdbRating {
+    color: #F4F4F4;
+}
+
+/* é colocado um fundo com a cor da imagem do lado esquerd.
+esse fundo não é uma imagem e não vai ser substituído por nada. é o fundo físico, que vai ser usado pra
+mostrar as informações que nele estão */
+.description {
+    width: 50%;
+    background: #390F0F;
+    box-shadow: inset 0px 0px 120px #090808;
+    padding: 60px 50px;
+    
+    z-index: 2;
+}
+
+/* Edita o título do filme. Mudando a cor, tamanho e margem. */
+#movieTitle {
+    color: #D6D6D6;
+    font-size: 38px;
+    margin-bottom: 30px;
+}
+
+/* Da um espaçamento entre as informações da descrição do filme. */
+#movieInfo {
+    margin: 25px 0;
+}
+
+/* Dá um espaçamento entre o nome do escritor e a descrição do filme */
+#movieWriter {
+    margin-bottom: 25px;
+}
+
+/* Deixa os "Anos" e "Durações" do filme na cor azul e em */
+.infoBlue {
+    color: #217C8F;
+    font-weight: bold;
+}
+
+/* Faz com que as informações "Ano", "gênero" e "duração" sejam centralizadas igualmente */
+#movieGenre{
+    margin: 0 20px;
+} 
+
+
+/* form */
+
+#formSearch {
+    margin-bottom: 30px;
+}
+
+/* Estiliza o botão onde será inserido o nome do filme, colocando o fundo de cor, dando cor e fonte ao texto 
+e aumentando o tamanho e que o texto colocado pelo usuário venha branco.*/
+#formSearch input[type='text'] {
+    background-color: #390F0F;
+    padding: 10px 20px;
+    color:  #F4F4F4;
+    font-size: 22px;
+    border: 4px solid #217C8F;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+/* Faz com que a borda da caixa fique branca quando apertar */
+#formSearch input[type='text']:focus{
+    outline: none;
+    border: 4px solid #F4F4F4;
+}
+
+/* Estiliza o botão de "Pesquisar", aumentando o tamanho, mudando cor do texto */
+#formSearch input[type='submit'] {
+    padding: 15px 20px;
+    background-color: #217C8F;
+    color:  #F4F4F4;
+    border-radius: 10px;
+    border: none;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Da animação para o botão de pesquisar, alternando as cores do texto e da caixa. */
+#formSearch input[type='submit']:hover {
+    background-color: #F4F4F4;
+    color:    #217C8F;
+    transition: 0.3s;
+}
+
+
+/* responsivo para celular */
+
+/* Define uma altura máxima para o site */
+@media (max-width: 700px) {
+
+    main {
+        position: static;
+        display: block;
+        font-size: 18px; 
+        /* height: 100%; */
+      }
+
+    #movieTitle {
+        font-size: 24px;
+    }
+
+    #moviePoster {
+        height: 65%;
+        width: 100%;
+    }
+
+    .description {
+        width: 100%;
+        position: relative;
+        z-index: 3;
+        padding: 8%;
+    }
+
+    #formSearch input[type='text'], #formSearch input[type='submit'] {
+        font-size: 18px;
+        width: 100%;
+    }
+
+  
+}
